@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Color Inverter</title>
+    <script src="https://cdn.jsdelivr.net/npm/module-notification/dist/index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="min-h-screen p-4 sm:p-6 md:p-8">
+    <div class="card max-w-2xl mx-auto rounded-lg shadow-lg p-6">
+      <img src="invert.svg" alt="Logo" class="absolute top-4 right-4 w-16 h-16" />
+      <h1 class="text-2xl font-bold mb-6">
+        CSS Color Inverter<span class="headding-padding">|</span
+        ><a
+          href="https://github.com/i14a-dsc/css-color-inverter"
+          target="_blank"
+          class="text-blue-500 hover:underline"
+          ><img src="code.svg" alt="Code" class="inline-block w-8 h-8 text-gray-500" />Source</a
+        >
+      </h1>
+      <div class="space-y-6">
+        <div class="space-y-2">
+          <label class="block text-sm font-medium">Input Color</label>
+          <div class="flex gap-2">
+            <input
+              type="text"
+              id="input"
+              placeholder="#RRGGBB, #RRGGBBAA, rgb(), rgba()"
+              class="flex-1 px-3 py-2 border rounded-md"
+            />
+            <button id="paste" class="px-3 py-2 border rounded-md">
+              <img src="paste.svg" alt="clipboard" class="w-6 h-6" />
+            </button>
+            <button
+              onclick="invert()"
+              class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            >
+              Invert
+            </button>
+          </div>
+        </div>
+
+        <div id="errorMessage"></div>
+
+        <div id="previewSection" class="preview-section space-y-4">
+          <div class="space-y-2">
+            <label class="block text-sm font-medium">Inverted Color</label>
+            <div class="flex gap-2">
+              <input
+                type="text"
+                id="output"
+                readonly
+                class="flex-1 px-3 py-2 border rounded-md font-mono"
+              />
+              <button id="copy" class="px-3 py-2 border rounded-md">
+                <img src="copy.svg" alt="clipboard" class="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-sm font-medium">Preview</label>
+            <div id="preview" class="preview-box h-24 rounded-lg border"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="mt-8 text-center">
+      <p class="text-sm text-gray-500 mt-4">
+        &copy;<a
+          href="https://github.com/i14a-dsc"
+          target="_blank"
+          class="text-blue-500 hover:underline"
+          >i14a-dsc</a
+        >
+        2025 All rights reserved.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        With
+        <a href="https://tailwindcss.com/" target="_blank" class="text-blue-500 hover:underline">
+          Tailwind CSS
+        </a>
+        &
+        <a
+          href="https://github.com/vadimkorr/module-notification"
+          target="_blank"
+          class="text-blue-500 hover:underline"
+          >module-notification
+        </a>
+      </p>
+    </footer>
+
+    <div id="notifications"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
