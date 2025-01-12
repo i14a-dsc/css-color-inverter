@@ -1,5 +1,10 @@
 const copy = document.getElementById('copy');
 const paste = document.getElementById('paste');
+const logo = document.getElementById('mdi-invert');
+
+logo.addEventListener('click', () => {
+  navigator.clipboard.writeText(location.href);
+});
 
 copy.addEventListener('click', () => {
   navigator.clipboard.writeText(document.getElementById('output').value);

@@ -6,19 +6,22 @@
     <title>CSS Color Inverter</title>
     <script src="https://cdn.jsdelivr.net/npm/module-notification/dist/index.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="min-h-screen p-4 sm:p-6 md:p-8">
     <div class="card max-w-2xl mx-auto rounded-lg shadow-lg p-6">
-      <img src="invert.svg" alt="Logo" class="absolute top-4 right-4 w-16 h-16" />
+      <img src="/invert.svg" alt="Logo" id="mdi-invert" class="absolute top-4 right-4 w-16 h-16" />
       <h1 class="text-2xl font-bold mb-6">
-        CSS Color Inverter<span class="headding-padding">|</span
-        ><a
+        CSS Color Inverter
+        <span class="headding-padding">|</span>
+        <a
           href="https://github.com/i14a-dsc/css-color-inverter"
           target="_blank"
           class="text-blue-500 hover:underline"
-          ><img src="code.svg" alt="Code" class="inline-block w-8 h-8 text-gray-500" />Source</a
         >
+          <img src="/code.svg" alt="Code" class="inline-block w-8 h-8 text-gray-500" />
+          Source
+        </a>
       </h1>
       <div class="space-y-6">
         <div class="space-y-2">
@@ -31,7 +34,7 @@
               class="flex-1 px-3 py-2 border rounded-md"
             />
             <button id="paste" class="px-3 py-2 border rounded-md">
-              <img src="paste.svg" alt="clipboard" class="w-6 h-6" />
+              <img src="/paste.svg" alt="clipboard" class="w-6 h-6" />
             </button>
             <button
               onclick="invert()"
@@ -55,7 +58,7 @@
                 class="flex-1 px-3 py-2 border rounded-md font-mono"
               />
               <button id="copy" class="px-3 py-2 border rounded-md">
-                <img src="copy.svg" alt="clipboard" class="w-6 h-6" />
+                <img src="/copy.svg" alt="clipboard" class="w-6 h-6" />
               </button>
             </div>
           </div>
@@ -72,21 +75,21 @@
         &copy;<a
           href="https://github.com/i14a-dsc"
           target="_blank"
-          class="text-blue-500 hover:underline"
-          >i14a-dsc</a
-        >
+          class="text-gray-500 hover:underline"
+          >i14a-dsc
+        </a>
         2025 All rights reserved.
       </p>
       <p class="text-sm text-gray-500 mt-2">
         With
-        <a href="https://tailwindcss.com/" target="_blank" class="text-blue-500 hover:underline">
+        <a href="https://tailwindcss.com/" target="_blank" class="text-gray-500 hover:underline">
           Tailwind CSS
         </a>
         &
         <a
           href="https://github.com/vadimkorr/module-notification"
           target="_blank"
-          class="text-blue-500 hover:underline"
+          class="text-gray-500 hover:underline"
           >module-notification
         </a>
       </p>

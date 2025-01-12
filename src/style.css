@@ -1,16 +1,16 @@
-  :root {
-    --primary: #818cf8;
-    --primary-hover: #6366f1;
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
-    --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
-    --btn: #1e3a8a;
-    --btn-hover: #3b82f6;
-    --border-color: #334155;
-    --input-bg: #1e293b;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-  }
+:root {
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --btn: #1e3a8a;
+  --btn-hover: #2a62bd;
+  --border-color: #334155;
+  --input-bg: #1e293b;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
 
 body {
   background-color: var(--bg-main);
@@ -18,6 +18,10 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
   line-height: 1.5;
+}
+
+#mdi-invert {
+  cursor: pointer;
 }
 
 .headding-padding {
@@ -64,6 +68,7 @@ button {
 }
 
 button:hover {
+  background-color: var(--btn-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
