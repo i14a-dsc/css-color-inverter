@@ -11,21 +11,27 @@
     <meta name="twitter:site" content="@1u0704" />
     <meta name="twitter:creator" content="@1u0704" />
     <meta name="twitter:card" content="app" />
-    <title>CSS Color Inverter</title>
+    <title>CSS Color Inverter v2.0</title>
     <script src="https://cdn.jsdelivr.net/npm/module-notification/dist/index.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="min-h-screen p-4 sm:p-6 md:p-8">
-    <div class="card max-w-2xl mx-auto rounded-lg shadow-lg p-6">
+    <div id="screen_warning" class="w-full h-full fixed top-0 left-0 bg-gray-900 bg-opacity-50">
+      <div>
+        <p>This site is not supported on this screen width.</p>
+        <p>Please use a larger screen or window.</p>
+      </div>
+    </div>
+    <div class="noselect card max-w-2xl mx-auto rounded-lg shadow-lg p-6">
       <img src="/invert.svg" alt="Logo" id="mdi-invert" class="absolute top-4 right-4 w-16 h-16" />
       <h1 class="text-2xl font-bold mb-6">
-        CSS Color Inverter
+        CSS Color Inverter v2.0
         <span class="headding-padding">|</span>
         <a
           href="https://github.com/i14a-dsc/css-color-inverter"
           target="_blank"
-          class="text-blue-500 hover:underline"
+          class="source text-blue-500 hover:underline"
         >
           <img src="/code.svg" alt="Code" class="inline-block w-8 h-8 text-gray-500" />
           Source
@@ -38,7 +44,7 @@
             <input
               type="text"
               id="input"
-              placeholder="#RRGGBB, #RRGGBBAA, rgb(), rgba()"
+              placeholder="#RRGGBB, 0xRRGGBB, rgb(), rgba()"
               class="flex-1 px-3 py-2 border rounded-md"
             />
             <button id="paste" class="px-3 py-2 border rounded-md">
@@ -55,7 +61,7 @@
 
         <div id="errorMessage"></div>
 
-        <div id="previewSection" class="preview-section space-y-4">
+        <div id="previewSection" class="hidden preview-section space-y-4">
           <div class="space-y-2">
             <label class="block text-sm font-medium">Inverted Color</label>
             <div class="flex gap-2">
@@ -72,38 +78,44 @@
           </div>
 
           <div class="space-y-2">
-            <label class="block text-sm font-medium">Preview</label>
-            <div id="preview" class="preview-box h-24 rounded-lg border"></div>
+            <label class="block text-sm font-medium">
+              Input
+              <span class="preview-text-padding">|</span>
+              Preview
+            </label>
+            <div class="flex gap-2">
+              <div id="preview-input" class="cursor-pointer preview-box h-24 border flex-1"></div>
+              <div id="preview" class="cursor-pointer preview-box h-24 border flex-1"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <footer class="mt-8 text-center">
-      <p class="text-sm text-gray-500 mt-4">
+    <footer class="mt-8 text-center noselect mx-auto text-center p-4">
+      <p class="text-sm text-gray-500">
         &copy;<a
           href="https://github.com/i14a-dsc"
           target="_blank"
           class="text-gray-500 hover:underline"
-          >i14a-dsc
-        </a>
-        2025 All rights reserved.
+          >i14a-dsc</a
+        >
+        <span> 2025 All rights reserved.</span>
       </p>
       <p class="text-sm text-gray-500 mt-2">
-        With
-        <a href="https://tailwindcss.com/" target="_blank" class="text-gray-500 hover:underline">
-          Tailwind CSS
-        </a>
-        &
+        Made with
+        <a href="https://tailwindcss.com/" target="_blank" class="text-gray-400 hover:underline"
+          >Tailwind CSS</a
+        ><span> & </span>
         <a
           href="https://github.com/vadimkorr/module-notification"
           target="_blank"
-          class="text-gray-500 hover:underline"
+          class="text-gray-400 hover:underline"
           >module-notification
         </a>
       </p>
     </footer>
 
-    <div id="notifications"></div>
+    <div id="notifications" class="fixed top-4 right-4"></div>
 
     <script src="script.js"></script>
   </body>

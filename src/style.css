@@ -7,7 +7,7 @@
   --text-secondary: #9ca3af;
   --btn: #1e3a8a;
   --btn-hover: #2a62bd;
-  --border-color: #334155;
+  --border-color: #3a4a61;
   --input-bg: #1e293b;
   --shadow-color: rgba(0, 0, 0, 0.3);
 }
@@ -29,6 +29,11 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.preview-text-padding {
+  color: var(--primary);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
 
 .card {
   background-color: var(--bg-card);
@@ -39,7 +44,6 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-2px);
   box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -4px var(--shadow-color);
 }
 
@@ -98,7 +102,8 @@ svg {
   overflow: hidden;
 }
 
-#preview {
+#preview,
+#preview-input {
   margin-left: 0.5rem;
   width: calc(100% - 1rem);
   height: 6rem;
@@ -172,9 +177,6 @@ label {
 }
 
 #notifications {
-  position: fixed;
-  top: 10px;
-  right: 10px;
   z-index: 9999;
   min-height: 250px;
   width: 400px;
@@ -183,4 +185,68 @@ label {
 
 #notifications > * {
   pointer-events: all;
+}
+
+.noselect {
+  user-select: none !important;
+  -moz-user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+footer {
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  border-radius: 12px;
+  width: max-content;
+  font-size: 0.875rem;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px -1px var(--bg-main), 0 2px 4px -2px var(--bg-main);
+}
+
+footer:hover {
+  box-shadow: 0 10px 15px -3px var(--bg-main), 0 4px 6px -4px var(--bg-main);
+}
+
+@media screen and (max-width: 600px) {
+  .headding-padding,
+  .source {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  body {
+    zoom: 0.8;
+  }
+}
+
+#screen_warning {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  body > * {
+    display: block;
+    z-index: 9999;
+    filter: blur(10px) grayscale(100%);
+  }
+  #screen_warning,
+  #screen_warning div {
+    width: 90%;
+    font-size: 4vw;
+    display: block;
+    background: none;
+    filter: none !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  #screen_warning p::before {
+    content: '';
+    border-right: 0.5vw solid red;
+    margin-right: 2vw;
+    height: 100%;
+  }
 }
