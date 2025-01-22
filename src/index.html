@@ -11,19 +11,13 @@
     <meta name="twitter:site" content="@1u0704" />
     <meta name="twitter:creator" content="@1u0704" />
     <meta name="twitter:card" content="app" />
-    <title>CSS Color Inverter v2.0</title>
+    <title>CSS Color Inverter v2.1</title>
     <script src="https://cdn.jsdelivr.net/npm/module-notification/dist/index.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="min-h-screen p-4 sm:p-6 md:p-8">
-    <div id="screen_warning" class="w-full h-full fixed top-0 left-0 bg-gray-900 bg-opacity-50">
-      <div>
-        <p>This site is not supported on this screen width.</p>
-        <p>Please use a larger screen or window.</p>
-      </div>
-    </div>
-    <div class="noselect card max-w-2xl mx-auto rounded-lg shadow-lg p-6">
+    <div id="main" class="noselect card max-w-2xl mx-auto rounded-lg shadow-lg p-6">
       <img src="/invert.svg" alt="Logo" id="mdi-invert" class="absolute top-4 right-4 w-16 h-16" />
       <h1 class="text-2xl font-bold mb-6">
         CSS Color Inverter v2.0
@@ -40,22 +34,24 @@
       <div class="space-y-6">
         <div class="space-y-2">
           <label class="block text-sm font-medium">Input Color</label>
-          <div class="flex gap-2">
+          <div class="flex flex-col sm:flex-row gap-2 sm:items-center">
             <input
               type="text"
               id="input"
               placeholder="#RRGGBB, 0xRRGGBB, rgb(), rgba()"
               class="flex-1 px-3 py-2 border rounded-md"
             />
-            <button id="paste" class="px-3 py-2 border rounded-md">
-              <img src="/paste.svg" alt="clipboard" class="w-6 h-6" />
-            </button>
-            <button
-              onclick="invert()"
-              class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-            >
-              Invert
-            </button>
+            <div class="flex gap-2 sm:mt-0 mt-2">
+              <button id="paste" class="px-3 py-2 border rounded-md">
+                <img src="/paste.svg" alt="clipboard" class="w-6 h-6" />
+              </button>
+              <button
+                onclick="invert()"
+                class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              >
+                Invert
+              </button>
+            </div>
           </div>
         </div>
 
@@ -64,16 +60,18 @@
         <div id="previewSection" class="hidden preview-section space-y-4">
           <div class="space-y-2">
             <label class="block text-sm font-medium">Inverted Color</label>
-            <div class="flex gap-2">
+            <div class="flex flex-col sm:flex-row gap-2 sm:items-center">
               <input
-                type="text"
-                id="output"
-                readonly
-                class="flex-1 px-3 py-2 border rounded-md font-mono"
+              type="text"
+              id="output"
+              readonly
+              class="flex-1 px-3 py-2 border rounded-md font-mono"
               />
+              <div class="flex gap-2 sm:mt-0 mt-2">
               <button id="copy" class="px-3 py-2 border rounded-md">
                 <img src="/copy.svg" alt="clipboard" class="w-6 h-6" />
               </button>
+              </div>
             </div>
           </div>
 
@@ -83,16 +81,16 @@
               <span class="preview-text-padding">|</span>
               Preview
             </label>
-            <div class="flex gap-2">
-              <div id="preview-input" class="cursor-pointer preview-box h-24 border flex-1"></div>
-              <div id="preview" class="cursor-pointer preview-box h-24 border flex-1"></div>
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-x-4">
+              <div id="preview-input" class="cursor-pointer preview-box min-h-32 h-full border flex-1 sm:w-1/2"></div>
+              <div id="preview" class="cursor-pointer preview-box min-h-32 h-full border flex-1 sm:w-1/2"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer class="mt-8 text-center noselect mx-auto text-center p-4">
-      <p class="text-sm text-gray-500">
+    <footer class="mt-8 mx-auto text-center noselect text-center">
+      <p class="text-gray-500">
         &copy;<a
           href="https://github.com/i14a-dsc"
           target="_blank"
@@ -101,7 +99,7 @@
         >
         <span> 2025 All rights reserved.</span>
       </p>
-      <p class="text-sm text-gray-500 mt-2">
+      <p class="text-gray-500 mt-2">
         Made with
         <a href="https://tailwindcss.com/" target="_blank" class="text-gray-400 hover:underline"
           >Tailwind CSS</a
